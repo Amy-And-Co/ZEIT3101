@@ -1,33 +1,16 @@
 <div id="chat-details">
     <p>Current Chat Room: <strong><%= @room_id %></strong><br>
-    Your current name: <strong><%= @username %></strong><br></p>
-    <p style="color:gray"><em>To invite others to your chat room, give them the link: localhost:4000/<%= @room_id %><em></p>
+    Your current name: <strong><%= @username %></strong></p>
 
 </div>
-<div id="main-body" >
-
-<%= display_chat_box(@chat_color) %>
-<%= f = form_for :chat, "#", id: "chat-form", phx_submit: :submit_message, phx_change: :form_update %>
-    <%= text_input f, :message, value: @message, placeholder: "Type your message here..." %>
-    </form>
+<div id="main-body">
+<div id="chat-container">
     <div id="chat-messages" phx-update="append">
         <%= for message <- @messages do %>
-            <%= display_message(message, yah: @username) %>
+            <%= display_message(message) %>
             <% end %>
         </div>
-
-
 </div>
-
-<div style="display:flex;flex-direction:column;">
-    <button class="colorbtn style1 grow" phx-click="change_color" value="style1"></button>
-    <button class="colorbtn style2 grow" phx-click="change_color" value="style2"></button>
-    <button class="colorbtn style3 grow" phx-click="change_color" value="style3"></button>
-    <button class="colorbtn style4 grow" phx-click="change_color" value="style4"></button>
-    <button class="colorbtn style5 grow" phx-click="change_color" value="style5"></button>
-    <button class="colorbtn style6 grow" phx-click="change_color" value="style6"></button>
-</div>
-    </form>
     <div id="user-list">
         <h4><b>Users in Chatroom</b></h3>
         <%= for user <- @user_list do %>
@@ -36,5 +19,8 @@
     </div>
 
 </div>
-
+<div id="textbox">
+<%= f = form_for :chat, "#", id: "chat-form", phx_submit: :submit_message, phx_change: :form_update %>
+    <%= text_input f, :message, value: @message, placeholder: "type your message here..." %>
+    </form>
     </div>
