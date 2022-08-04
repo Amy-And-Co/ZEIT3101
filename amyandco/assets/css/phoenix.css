@@ -20,9 +20,23 @@ pre{padding: 1em;}
 .container{
   margin: 0 auto;
   max-width: 80.0rem;
+  padding: 2.0rem;
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0.7);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.container-header{
+  margin: 0 auto;
+  max-width: 80.0rem;
   padding: 0 2.0rem;
   position: relative;
-  width: 100%
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 select {
   width: auto;
@@ -55,8 +69,6 @@ select {
 /* Headers */
 header {
   width: 100%;
-  background: #fdfdfd;
-  border-bottom: 1px solid #eaeaea;
   margin-bottom: 2rem;
 }
 header section {

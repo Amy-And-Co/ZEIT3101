@@ -4,15 +4,63 @@
 #chat-container {
   display: flex;
   border: 2px solid purple;
+  background: white;
   border-radius: 10px;
   margin: 5px;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-between;
-  height: 500px;
+  height: 60vh;
   flex-grow: 2;
   overflow-y: scroll;
 }
+.style1{
+  background: rgb(238,174,202);
+  background: linear-gradient(52deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); 
+}
 
+.style2{
+  background: rgb(34,193,195); background: linear-gradient(62deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+.style3{
+  background: rgb(131,58,180); background: linear-gradient(31deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+.style4{
+  background: rgb(2,145,0); background: linear-gradient(31deg, rgba(2,145,0,1) 0%, rgba(167,253,29,0.6180672952774859) 50%, rgba(228,252,69,0.8953782196472339) 100%); 
+}
+.style5{
+  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+.style6{
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+  background-blend-mode: multiply,multiply;
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+.grow:hover {
+ transform: scale(1.1);
+}
+
+
+.colorbtn{
+  padding:0;
+  width:40px;
+  height:40px;
+  border-radius: 50%;
+  border-color:purple;
+}
+
+#chat-form_message{
+  margin: 5px;
+  border-radius:20px;
+  width:98%;
+  background:rgba(255,255,255,0.5)
+}
+#chat-form{
+  margin:0;
+  position:sticky;
+}
 #chat-messages p {
   padding-left: 5px;
   padding-right: 5px;
@@ -27,12 +75,23 @@
 
 #chat-details{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+#chat-details p{
+  margin:0;
 }
 
 #user-list{
-  padding-left: 100px;
-  
+  margin-left: 20px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(120, 252, 245, 0.527);
+  border-radius: 10px;
+  overflow-y: auto;
+  height: 50vh;
 }
 
 #textbox{
@@ -52,7 +111,16 @@
   display:flex;
 }
 
+#ownMsg{
+  justify-content: right;
+  display: flex;
+  flex-direction:row-reverse;
 
+}
+
+body{
+  background:rgba(120, 252, 245, 0.527);
+}
 
 
 /* Alerts and form errors used by phx.new */
