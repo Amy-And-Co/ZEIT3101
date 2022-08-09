@@ -1,6 +1,8 @@
 defmodule PrivateChatWeb.ChatChannel do
   use PrivateChatWeb, :channel
 
+  alias Chats.Chats
+
   #auth logic goes here
   @impl true
   def join("chat:lobby", _payload, socket) do
@@ -11,6 +13,7 @@ defmodule PrivateChatWeb.ChatChannel do
   # broadcast to everyone in the current topic (chat:lobby).
   @impl true
   def handle_in("shout", payload, socket) do
+    Chats.create_message(payload) #save message before sent out
     broadcast socket, "shout", payload
     {:noreply, socket}
   end
