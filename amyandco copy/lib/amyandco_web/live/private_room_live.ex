@@ -1,22 +1,27 @@
 defmodule AmyandcoWeb.PrivateRoomLive do
   use AmyandcoWeb, :live_view
   require Logger
+  import Ecto.Query, warn: false
+  alias Amyandco.Chats.Message
 
 
   @impl true
   def mount(_params, _session, socket) do
     topic = "Private Room"
-    username = "User"
+    username = MnemonicSlugs.generate_slug(2)
+    messages = Message.list_messages() |> Enum.reverse()
+    changeset = Message.changeset(%Message{}, %{})
     if connected?(socket) do
       AmyandcoWeb.Endpoint.subscribe(topic)
       AmyandcoWeb.Presence.track(self(), topic, username, %{})
     end
     {:ok,
      assign(socket,
+      changeset: changeset,
        topic: topic,
        username: username,
        message: "",
-       messages: [],
+       messages: messages,
        user_list: [],
        temporary_assigns: [messages: []],
        chat_color: "background: rgb(238,174,202);background: linear-gradient(52deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);"
