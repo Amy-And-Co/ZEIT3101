@@ -1,4 +1,6 @@
-# System Security
+# System Security  
+NOTE: The amyandcoWithAuth folder is the deployed product. The rest are kept as recordkeeping
+
 ## Project Aim 
 We aim to discover and analyse threats that may be encountered through deploying a simple phoenix application through fly.io so the client have a clear view on any risks and mitigations for their own deployment. 
 
