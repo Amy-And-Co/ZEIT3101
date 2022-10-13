@@ -1,0 +1,1 @@
+This folder contains some code that was written personally by the group and is not part of the generated code by Phoenix.
