@@ -1,4 +1,6 @@
-# System Security
+# System Security  
+IMPORTANT: FULL PROJECT CODE IS SAVED IN "master" BRANCH, this branch contains snippets of code created in our project for reference!
+
 ## Project Aim 
 We aim to discover and analyse threats that may be encountered through deploying a simple phoenix application through fly.io so the client have a clear view on any risks and mitigations for their own deployment. 
 
