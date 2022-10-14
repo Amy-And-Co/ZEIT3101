@@ -24,6 +24,8 @@ defmodule AmyandcoWeb.Router do
   end
 
   # Other scopes may use custom stacks.
+  # scope "/api", AmyandcoWeb do
+  #   pipe_through :api
   # end
 
   # Enables LiveDashboard only for development
